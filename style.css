@@ -1,0 +1,9 @@
+.main-container {
+    border: 2px solid black;
+    max-width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
