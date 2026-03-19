@@ -1,9 +1,128 @@
-.main-container {
-    border: 2px solid black;
-    max-width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 4%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 0;
+}
+.logo,.aside-logo {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+}
+.hamburger svg {
+    display: flex;
+    width: 35px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.nav-links {
+    display: flex;
+    gap: 70px;
+}
+.nav-links li {
+    list-style: none;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+.nav-links li a {
+    color: #ddd;
+}
+.right {
+    display: flex;
+    gap: 30px;
+}
+
+.join-btn {
+    padding: 5px 20px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.join-btn:hover {
+    background-color: #ddd;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+aside {
+    width: 200px;
+    height: 100vh;
+    padding: 4% 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    z-index: 90000;
+    left: -200px;
+    transition: all 0.3s ease;
+    
+}
+.aside {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.aside li {
+    list-style: none;
+}
+.aside li a {
+    color: white;
+    text-decoration: none;
+}
+aside.active {
+    left: 0;
+}
+.overlay {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.699);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.overlay.active {
+    display: block;
+}
+

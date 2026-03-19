@@ -1,71 +1,41 @@
-let products = [
-    'apple',
-    'banana',
-    'pineiple',
-    'orange',
-    'mango',
-    'bananas',
-]
+const hamburger = document.querySelector('.hamburger');
 
-const mainContainer = document.getElementById('main-container');
-const search = document.getElementById('search');
+const navLinks = document.querySelector('.nav-links');
 
-products.forEach(product => {
-    mainContainer.innerHTML += `<p>${product}</p>`;
-})
+const logo = document.querySelector('.logo');
 
-search.addEventListener('input', function greet() {
+const aside = document.querySelector('.aside');
 
-    mainContainer.innerHTML = ""; // yana goge tsohon result
+const asideLogo = document.querySelector('.aside-logo');
 
-    let value = search.value.toLowerCase();
+const asideContainer = document.querySelector('aside');
 
+const overlay = document.querySelector('.overlay');
 
-        product = products.filter(fin => fin.toLowerCase().includes(value));
+let linksHTML = '';
+let logoHTML = `<h1>Eng'r</h1>`;
 
-        for(let i = 0; i < product.length; i++){
-            console.log(product[i]);
-            mainContainer.innerHTML += `<p>${product[i]}</p>`;
-        }
+let navLists = [
+    'Home',
+    'Services',
+    'About'
+];
 
 
+navLists.forEach(list => {
+    linksHTML += `<li><a href="">${list}</a></li>`;
+    navLinks.innerHTML = linksHTML;
+    aside.innerHTML = linksHTML;
+}); 
+asideLogo.innerHTML = logoHTML;
+logo.innerHTML = logoHTML;
+hamburger.addEventListener('click', () => {
+     asideContainer.classList.toggle('active');
+     overlay.classList.add('active');
+});
+overlay.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    asideContainer.classList.remove('active');
+});
 
-})
    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Output: 30
-
-// Explanation:
-// The reduce() method takes a callback function that is executed on each element of the array, resulting in a single output value. In this case, the callback function takes two parameters: 'matattatara' (the accumulator) and 'numbanDaAkeDaita' (the current value). The function adds the current value to the accumulator and returns the result, which becomes the new value of the accumulator for the next iteration. After processing all elements in the array, the final value of the accumulator is returned as the total sum of the numbers in the array.
